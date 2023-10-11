@@ -19,3 +19,6 @@ Add DB and DB configuration (we use postgresql DB in this project)
 Create a django application in the container:
 docker-compose run --rm app sh -c "python manage.py startapp core"
 
+
+create DB migrations
+
