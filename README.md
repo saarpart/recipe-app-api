@@ -22,3 +22,10 @@ docker-compose run --rm app sh -c "python manage.py startapp core"
 
 create DB migrations
 
+Remove migrations in case of change:
+In case of error in migrarion (InconsistentMigrationHistory)
+docker-compose down
+docker volume ls
+docker volume rm <volume name>
+
+
