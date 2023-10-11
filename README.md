@@ -31,4 +31,7 @@ docker-compose down
 docker volume ls
 docker volume rm <volume name>
 
+Create superuser:
+docker-compose run --rm app sh -c "python manage.py createsuperuser"
+
 
