@@ -23,6 +23,21 @@ Execute unit tests:
 docker-compose run --rm app sh -c "python manage.py test"
 docker-compose run --rm app sh -c "python manage.py test && flake8"
 
+Add endpoint:
+docker-compose run --rm app sh -c "python manage.py startapp <name>"
+remove unnecessary folders and files:
+migrations
+admin.py
+tests.py
+models.py
+create folder tests
+create inside tests __init__.py
+
+Add new <name> to app/app/settings.py to INSTALLED_APPS.
+
+Create new file in <name> called serializers.py
+
+
 
 create DB migrations
 
