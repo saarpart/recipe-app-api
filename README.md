@@ -21,6 +21,7 @@ docker-compose run --rm app sh -c "python manage.py startapp core"
 
 Execute unit tests:
 docker-compose run --rm app sh -c "python manage.py test"
+docker-compose run --rm app sh -c "python manage.py test && flake8"
 
 
 create DB migrations
