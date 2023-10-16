@@ -41,7 +41,7 @@ class PublicRecipeAPITests(TestCase):
 
     def test_auth_required(self):
         """Test auth is required to call API."""
-        res = self.client.get(RECIPES_API)
+        res = self.client.get(RECIPES_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
@@ -55,8 +55,7 @@ class PrivateRecipeAPITests(TestCase):
             'user@example.com',
             'testpass123',
         )
-        seld.client.force_authenticate(self.user)
-
+        self.client.force_authenticate(self.user)
 
     def test_retrive_recipes(self):
         """Test retrieving a list of recips."""

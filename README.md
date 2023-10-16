@@ -52,8 +52,15 @@ Create new folder tests and inside create __init__.py
 
 Add the new model to app.recipe.py inside INSTALLED_APPS.
 
+Add tests to tests folder.
 
+Add Serializer: add a file called serializers.py in inside define the model serializers
 
+Add a view for the model in views.py. For CRUD (Create, Read, Update, Delete) use the viewsets. Else use the APIView.
+
+Configure the endpoints in the urls.py file.
+Create new file in the new app named urls.py.
+Add the new urls in the app urls.py
 
 
 Execute unit tests:
