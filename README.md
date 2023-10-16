@@ -67,6 +67,9 @@ Create a deiat serializers
 Determine in the views.py which serializer to use (detailed or list). 
 ***Return a REFERENCE to the class and not an object!***
 
+To execute it use the /api/docs/ interface.
+First authenticate the user and then use the API.
+
 
 
 Execute unit tests:
