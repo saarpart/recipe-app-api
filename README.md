@@ -62,6 +62,12 @@ Configure the endpoints in the urls.py file.
 Create new file in the new app named urls.py.
 Add the new urls in the app urls.py
 
+To implement a detail recipe we need to:
+Create a deiat serializers
+Determine in the views.py which serializer to use (detailed or list). 
+***Return a REFERENCE to the class and not an object!***
+
+
 
 Execute unit tests:
 -------------------
