@@ -34,11 +34,30 @@ Adding a model to the project:
 ------------------------------
 i.e. Recipe
 Add new models in core.models for the new Model
+
 Register the new model in core.admin.py
+
 Create the migration file for the new model:
 docker-compose run --rm app sh -c "python manage.py makemigrations"
 
+Create app to handle all the code for the model endpoints:
+docker-compose run --rm app sh -c "python manage.py startapp <module name>"
+From the project remove:
+mogrations folder
+admin.py
+models.py
+test.py
+
+Create new folder tests and inside create __init__.py
+
+Add the new model to app.recipe.py inside INSTALLED_APPS.
+
+
+
+
+
 Execute unit tests:
+-------------------
 docker-compose run --rm app sh -c "python manage.py test"
 docker-compose run --rm app sh -c "python manage.py test && flake8"
 
