@@ -50,7 +50,7 @@ test.py
 
 Create new folder tests and inside create __init__.py
 
-Add the new model to app.recipe.py inside INSTALLED_APPS.
+Add the new model to app.settings.py inside INSTALLED_APPS.
 
 Add tests to tests folder.
 
@@ -74,6 +74,7 @@ First authenticate the user and then use the API.
 
 Execute unit tests:
 -------------------
+make sure docker desktop is running.
 docker-compose run --rm app sh -c "python manage.py test"
 docker-compose run --rm app sh -c "python manage.py test && flake8"
 
