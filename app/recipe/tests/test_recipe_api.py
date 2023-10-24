@@ -379,6 +379,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(recipe.ingredients.count(), 0)
 
+
 class ImageUploadTests(TestCase):
     """Tests for image upload API."""
 

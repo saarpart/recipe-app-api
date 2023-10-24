@@ -137,5 +137,55 @@ docker-compose run --rm app sh -c "python manage.py createsuperuser"
 Use the admin:
 Open browaser and type: 127.0.0.1:8000/admin/
 
+Adding image uploading support:
+-------------------------------
+1. In Dockerfile:
+
+Add dependencies to the python environment:
+apk add --update --no-cache jpeg-dev 
+apk add --update --no-cache --virtual .tmp-build-deps zlib zlib-dev (remove these 2 after installation)
+
+2. Configure the project to use static files:
+Create relevant folders for django-user:
+mkdir -p /vol/web/media
+mkdir -p /vol/web/static
+chown -R django-user:django-user /vol
+chmod -R 755 /vol
+
+3. Run docker-compose build
+
+4. Update docker-compose.yml file:
+Add volume:
+dev-static-data:
+Add new volume to app volumes:
+- dev-static-data:/vol/web
+
+5. Add static configurations to settings.py:
+STATIC_URL = '/static/static/'
+MEDIA_URL = '/static/media/'
+
+MEDIA_ROOT = '/vol/web/media'
+STATIC_ROOT = '/vol/web/static'
+
+6. Update the url.py:
+from django.conf.urls.static import static
+from django.conf import settings
+
+After urlpatterns configuration add:
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT,
+    )
+
+
+
+
+
+
+
+
+
+
 
 
