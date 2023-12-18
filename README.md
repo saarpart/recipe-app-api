@@ -177,7 +177,17 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT,
     )
+	
+7. Add image in model.
 
+8. Create tests for image uploading.
+
+9. Add a Serializer for image.
+
+
+user1@example.com
+pass123
+Token 1c335e99fdc1fc57807d5076ef775d1e03dbdd98
 
 
 
