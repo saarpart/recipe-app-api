@@ -1,12 +1,6 @@
 """
 Views for the recipe APIs.
 """
-from drf_spectacular.utils import (
-    extend_schema_view,
-    extend_schema,
-    OpenApiParameter,
-    OpenApiTypes,
-)
 from rest_framework import (
     viewsets,
     mixins,
